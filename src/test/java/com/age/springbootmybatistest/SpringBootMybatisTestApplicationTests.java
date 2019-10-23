@@ -21,6 +21,6 @@ public class SpringBootMybatisTestApplicationTests {
 
     @Test
     public void mybatisTest(){
-        System.out.println(mybatisTestService.run());
+        mybatisTestService.run();
     }
 }

@@ -2,8 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.age.springbootmybatistest.mapper.MybatisTestMapper">
 
-    <select id="mybatisTest" resultType="java.lang.String">
-        select user_name as userName from user_info where user_id = 1
-    </select>
+    <insert id="mybatisTest">
+        insert into bulk_insert_test(DR_SEG1, DR_SEG2, DR_SEG3, DR_SEG4, DR_SEG5) values
+         <foreach collection="list" item="bulkinserttest" separator=",">
+             (#{bulkinserttest.drSeg1}, #{bulkinserttest.drSeg2}, #{bulkinserttest.drSeg3}, #{bulkinserttest.drSeg4}, #{bulkinserttest.drSeg5})
+         </foreach>
+    </insert>
 
 </mapper>

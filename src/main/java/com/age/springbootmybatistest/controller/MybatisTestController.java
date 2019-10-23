@@ -12,7 +12,7 @@ public class MybatisTestController {
     private MybatisTestService mybatisTestService;
 
     @GetMapping(value = "/mybatisTest")
-    public String mybatisTest(){
-        return mybatisTestService.run();
+    public void mybatisTest(){
+        mybatisTestService.run();
     }
 }
